@@ -1,0 +1,36 @@
+type Query {
+    customerById(id: ID): Customer
+    helloWithName(name : String): String
+    hello: String
+    customers: [Customer]
+    movies: [Movie]
+    movieById(id: String): Movie
+}
+
+type Mutation {
+    createMovie(movie: MovieInput): Movie
+}
+
+input MovieInput {
+    name: String!,
+    publishYear: Int!
+}
+
+type Movie {
+    id: String!,
+    name: String!,
+    publishYear: Int!
+}
+
+type Customer {
+    id: ID
+    name: String
+    account: Account
+    age: Int
+}
+
+type Account {
+    id: ID
+    type: String
+}
+
